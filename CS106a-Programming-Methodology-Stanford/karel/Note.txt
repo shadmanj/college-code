@@ -1,0 +1,4 @@
+I'm not sure if these files will run right off the bat if downloaded.
+Definitely need to use JRE 1.6, but not sure if I need to package any more
+things in here for this to work right from download. 
+Will update if I learn anything new.
