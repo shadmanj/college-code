@@ -1,0 +1,24 @@
+INDEX VERSION 1.126+/home/shadman/college-code/CS106a-Programming-Methodology-Stanford/.metadata/.plugins/org.eclipse.jdt.core
+4139034962.index
+3394722079.index
+3019268738.index
+1449775907.index
+3124604304.index
+3806379418.index
+1398671525.index
+3104191383.index
+3443170566.index
+1412680892.index
+1150366783.index
+3241332491.index
+609826867.index
+3176163721.index
+3476657559.index
+822514700.index
+2874734686.index
+3628237268.index
+2864293982.index
+3788487953.index
+3156470813.index
+3877108753.index
+3368800820.index
