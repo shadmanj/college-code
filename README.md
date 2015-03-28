@@ -11,10 +11,6 @@ C, Python, MATLAB, Java, RobotC, and LabVIEW.
 
 This repository is organized in the following manner:
 
-<<<<<<< HEAD
 Course --> Project[Language(s) Used] --> File.ext
-=======
-Course --> Project-Language --> Files.ext
->>>>>>> 517fe82acfe2844f44ed8354cbc675278c7db89e
 
 I am actively using this repository to access code from school computers and my laptop, so newer projects might still be in progress.
