@@ -1,0 +1,67 @@
+/*
+ * File: ProgramHierarchy.java
+ * Name: 
+ * Section Leader: 
+ * ---------------------------
+ * This file is the starter file for the ProgramHierarchy problem.
+ */
+
+import acm.graphics.*;
+import acm.program.*;
+import java.awt.*;
+
+public class ProgramHierarchy extends GraphicsProgram {
+	//Set width and height of text boxes
+	private static final double WIDTH = 110;
+	private static final double HEIGHT = 30;
+
+	public void run() {
+		//Get center x and y coordinates of screen and make them center of the box
+		double cx = (getWidth()/2);
+		double cy = (getHeight()/2);
+		drawBoxes(cx,cy);
+		drawLabels(cx,cy);
+		//drawLines(cx,cy);
+	}
+	
+	private void drawLabels(double cx, double cy){
+		//Define center x and y coordinates of the labels
+		double label_cx = cx-(WIDTH/4);
+		double label_cy = cy;
+		//Set label properties
+		GLabel Program = new GLabel("Program",label_cx,label_cy);
+		Program.setLocation();
+		GLabel Graphics = new GLabel("GraphicsProgram");
+		Program.setLocation();
+		GLabel Console = new GLabel("ConsoleProgram");
+		Program.setLocation();
+		GLabel Dialog = new GLabel("DialogProgram");
+		Program.setLocation();
+		//Add labels
+		add(Program);
+		add(Graphics);
+		add(Console);
+		add(Dialog);
+	}
+	
+	/*private void drawLines(double cx, double cy){
+		
+	}
+	*/
+	private void drawBoxes(double cx,double cy){
+		//Define center x and y coordinates of the boxes
+		double box_cx = cx-(WIDTH/2);
+		double box_cy = cy-(HEIGHT);
+		//Set dimensions of boxes
+		GRect boxProgram = new GRect(box_cx,box_cy,WIDTH,HEIGHT);
+		GRect boxGraphics = new GRect(box_cx,box_cy+2*HEIGHT,WIDTH,HEIGHT);
+		GRect boxConsole = new GRect(box_cx-1.5*WIDTH,box_cy+2*HEIGHT,WIDTH,HEIGHT);
+		GRect boxDialog = new GRect(box_cx+1.5*WIDTH,box_cy+2*HEIGHT,WIDTH,HEIGHT);
+		//Add boxes
+		add(boxProgram);
+		add(boxGraphics);
+		add(boxConsole);
+		add(boxDialog);
+	}
+}
+

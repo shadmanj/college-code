@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="1" version="2.0">
+<workbench progressCount="20" version="2.0">
 <workbenchAdvisor/>
-<window height="764" width="1016" x="350" y="50">
+<window height="762" width="1012" x="295" y="6">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -31,30 +31,24 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pyramid.java" partName="Pyramid.java" path="/home/shadman/college-code/CS106a-Programming-Methodology-Stanford/Assignment2-JAVA/Pyramid.java" title="Pyramid.java" tooltip="Assignment2-JAVA/Pyramid.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Assignment2-JAVA/Pyramid.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="498" selectionTopPixel="572"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Target.java" partName="Target.java" path="/home/shadman/college-code/CS106a-Programming-Methodology-Stanford/Assignment2-JAVA/Target.java" title="Target.java" tooltip="Assignment2-JAVA/Target.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Assignment2-JAVA/Target.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="909" selectionTopPixel="120"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="498" selectionTopPixel="114"/>
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PythagoreanTheorem.java" partName="PythagoreanTheorem.java" path="/home/shadman/college-code/CS106a-Programming-Methodology-Stanford/Assignment2-JAVA/PythagoreanTheorem.java" title="PythagoreanTheorem.java" tooltip="Assignment2-JAVA/PythagoreanTheorem.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Assignment2-JAVA/PythagoreanTheorem.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="298" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="610" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (57 items)"/>
-<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Warnings (55 items)"/>
 <category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="134" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
@@ -145,38 +139,27 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.ui.views.TaskList"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="topLeft">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@4638fb59" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@4638fb59" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.25940594" ratioLeft="262" ratioRight="748" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottomRight" ratio="0.6594761" ratioLeft="428" ratioRight="221" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<info folder="true" part="bottomRight" ratio="0.6594761" ratioLeft="428" ratioRight="221" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="bottomLeft" ratio="0.49922958" ratioLeft="324" ratioRight="325" relationship="4" relative="topLeft">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<info folder="true" part="bottomLeft" ratio="0.49922958" ratioLeft="324" ratioRight="325" relationship="4" relative="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
@@ -298,13 +281,9 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Assignment2-JAVA/Pyramid.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Assignment2-JAVA/Target.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Assignment2-JAVA/PythagoreanTheorem.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Assignment2-JAVA/Target.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Assignment2-JAVA/Pyramid.java"/>
 </editors>
-<item historyLabel="Pyramid.java" index="0">
-<position info="not_deleted" x="4" y="0"/>
-</item>
-<item historyLabel="Pyramid.java" index="0">
-<position info="not_deleted" x="1509" y="0"/>
-</item>
 <item historyLabel="Pyramid.java" index="0">
 <position info="not_deleted" x="1277" y="0"/>
 </item>
@@ -401,8 +380,59 @@
 <item historyLabel="Target.java" index="1">
 <position info="not_deleted" x="909" y="0"/>
 </item>
-<item active="true" historyLabel="PythagoreanTheorem.java" index="2">
+<item historyLabel="PythagoreanTheorem.java" index="2">
 <position info="not_deleted" x="3" y="0"/>
+</item>
+<item historyLabel="Target.java" index="3">
+<position info="not_deleted" x="4" y="0"/>
+</item>
+<item historyLabel="Target.java" index="3">
+<position info="not_deleted" x="909" y="0"/>
+</item>
+<item historyLabel="Pyramid.java" index="4">
+<position info="not_deleted" x="4" y="0"/>
+</item>
+<item historyLabel="Pyramid.java" index="4">
+<position info="not_deleted" x="498" y="0"/>
+</item>
+<item historyLabel="PythagoreanTheorem.java" index="2">
+<position info="not_deleted" x="763" y="0"/>
+</item>
+<item historyLabel="Pyramid.java" index="4">
+<position info="not_deleted" x="498" y="0"/>
+</item>
+<item historyLabel="PythagoreanTheorem.java" index="2">
+<position info="not_deleted" x="367" y="0"/>
+</item>
+<item historyLabel="Pyramid.java" index="4">
+<position info="not_deleted" x="498" y="0"/>
+</item>
+<item historyLabel="PythagoreanTheorem.java" index="2">
+<position info="not_deleted" x="367" y="0"/>
+</item>
+<item historyLabel="PythagoreanTheorem.java" index="2">
+<position info="not_deleted" x="454" y="0"/>
+</item>
+<item historyLabel="PythagoreanTheorem.java" index="2">
+<position info="not_deleted" x="440" y="0"/>
+</item>
+<item historyLabel="Pyramid.java" index="4">
+<position info="not_deleted" x="498" y="0"/>
+</item>
+<item historyLabel="PythagoreanTheorem.java" index="2">
+<position info="not_deleted" x="440" y="0"/>
+</item>
+<item historyLabel="PythagoreanTheorem.java" index="2">
+<position info="not_deleted" x="562" y="0"/>
+</item>
+<item historyLabel="PythagoreanTheorem.java" index="2">
+<position info="not_deleted" x="624" y="0"/>
+</item>
+<item historyLabel="PythagoreanTheorem.java" index="2">
+<position info="not_deleted" x="693" y="0"/>
+</item>
+<item active="true" historyLabel="PythagoreanTheorem.java" index="2">
+<position info="not_deleted" x="761" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
