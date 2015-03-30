@@ -13,9 +13,6 @@ import acm.program.*;
 public class PythagoreanTheorem extends ConsoleProgram {
 	public void run(){
 		println("This program will calculate the hypotenuse of a triangle.");
-		double a = readDouble("a: ");
-		double b = readDouble("b: ");
-		double c = Math.sqrt((a*a)+(b*b));
-		println("c = " + c);
+		
 	}
 }

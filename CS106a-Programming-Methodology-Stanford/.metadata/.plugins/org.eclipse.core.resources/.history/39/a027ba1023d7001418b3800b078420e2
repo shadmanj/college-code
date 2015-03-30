@@ -15,7 +15,6 @@ public class PythagoreanTheorem extends ConsoleProgram {
 		println("This program will calculate the hypotenuse of a triangle.");
 		double a = readDouble("a: ");
 		double b = readDouble("b: ");
-		double c = Math.sqrt((a*a)+(b*b));
-		println("c = " + c);
+		
 	}
 }

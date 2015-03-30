@@ -16,6 +16,6 @@ public class PythagoreanTheorem extends ConsoleProgram {
 		double a = readDouble("a: ");
 		double b = readDouble("b: ");
 		double c = Math.sqrt((a*a)+(b*b));
-		println("c = " + c);
+		println("c = ",+c);
 	}
 }
