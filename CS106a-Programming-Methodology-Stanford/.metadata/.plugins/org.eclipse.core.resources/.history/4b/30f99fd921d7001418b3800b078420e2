@@ -19,7 +19,6 @@ public class ProgramHierarchy extends GraphicsProgram {
 		//Get center x and y coordinates of screen and make them center of the box
 		double cx = (getWidth()/2);
 		double cy = (getHeight()/2);
-		//Draw shapes needed for flowchart
 		drawBoxes(cx,cy);
 		drawLabels(cx,cy);
 		drawLines(cx,cy);
