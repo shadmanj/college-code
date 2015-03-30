@@ -1,0 +1,21 @@
+/*
+ * File: FindRange.java
+ * Name: 
+ * Section Leader: 
+ * --------------------
+ * This file is the starter file for the FindRange problem.
+ */
+
+import acm.program.*;
+
+// This script takes inputs until a sentinel value is entered.
+// The program will display the highest and lowest values entered.
+
+public class FindRange extends ConsoleProgram {
+	//Set sentinel value
+	private static final double SENTINEL = 0;
+	public void run() {
+		println()
+	}
+}
+
