@@ -1,0 +1,35 @@
+/*
+ * File: Target.java
+ * Name: 
+ * Section Leader: 
+ * -----------------
+ * This file is the starter file for the Target problem.
+ */
+
+import acm.graphics.*;
+import acm.program.*;
+import java.awt.*;
+//Create the target logo
+public class Target extends GraphicsProgram {	
+	public void run() {
+		//Get center coordinates of screen
+		double cx = getWidth()/2;
+		double cy = getHeight()/2;
+		//Set dimensions of each circle
+		double r_OuterCircle = 72;
+		double r_WhiteCircle = 72 * 0.65;
+		double r_InnerCircle = 72 * 0.3;
+		//Initialize circles
+		GOval outerCircle = new GOval();
+		GOval whiteCircle = new GOval();
+		GOval innerCircle = new GOval();
+		//Set Circle Colors
+		outerCircle.setFillColor(Color .red);
+		whiteCircle.setFillColor(Color .white);
+		innerCircle.setFillColor(Color .red);
+		//Draw shapes on canvas
+		add(outerCircle);
+		add(whiteCircle);
+		add(innerCircle);
+	}
+}
