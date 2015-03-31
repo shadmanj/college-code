@@ -14,6 +14,7 @@ import acm.util.*;
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.JFrame;
 
 public class Breakout extends GraphicsProgram {
 
@@ -56,11 +57,74 @@ public class Breakout extends GraphicsProgram {
 
 /** Number of turns */
 	private static final int NTURNS = 3;
+	
+/** Starting X and Y velocities **/
+	private static final double X_VEL = 0;
+	private static final double Y_VEL = -5;
+	
+/**	Private GInstance variable **/
+	private GOval ball;
 
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-		/* You fill this in, along with any subsidiary methods */
+		/*Initial set up*/
+		drawBricks();
+		drawPaddle();
+		drawBall();
+		/*Drop ball*/
+		//addMouseListeners();
+		
 	}
-
+	
+	/*Method to click to draw ball*/
+	private void drawBall(){
+		ball = new GOval(getWidth()/2-BALL_RADIUS,getHeight()/2-BALL_RADIUS,BALL_RADIUS,BALL_RADIUS);
+		ball.setFilled(true);
+		ball.setFillColor(Color .black);
+		add(ball);
+	}
+	
+	/*Method to draw paddle*/
+	private void drawPaddle(){
+		/*Set starting position of paddle*/
+		int paddlex = getWidth()/2-PADDLE_WIDTH/2;
+		int paddley = HEIGHT-PADDLE_Y_OFFSET;
+		GRect paddle = new GRect(paddlex,paddley,PADDLE_WIDTH,PADDLE_HEIGHT);
+		paddle.setFilled(true);
+		paddle.setFillColor(Color .black);
+		add(paddle);
+	}
+	/*Method to draw initial array of bricks*/
+	private void drawBricks(){
+		/*Initialize row number*/
+		int row = 0, row4color = 0;
+		/*Starting y position of bricks*/
+		int bricky = 70;
+		while (row < NBRICK_ROWS){
+			/*Make sure row4color is between 0 and 11 for accurate row coloring*/
+			if (row4color == 11){row4color = 0;}
+			/*Brick in row*/
+			int Nbrick = 0;
+			/*Starting x position of bricks*/
+			int brickx = 4;
+			while (Nbrick < NBRICKS_PER_ROW){
+				/*Draw a brick of given dimensions and position*/
+				GRect brick = new GRect(brickx,bricky,BRICK_WIDTH,BRICK_HEIGHT);
+				/*SET BRICK COLOR*/
+				brick.setFilled(true);
+				if (row < 2){brick.setFillColor(Color .red);}
+				else if (row < 4 && row >=2){brick.setFillColor(Color .orange);}
+				else if (row <6 && row >=4){brick.setFillColor(Color .yellow);}
+				else if (row <8 && row >=6){brick.setFillColor(Color .green);}
+				else if (row <10 && row >=8){brick.setFillColor(Color .cyan);}
+				/*Show brick*/
+				add(brick);
+				brickx+=BRICK_WIDTH+BRICK_SEP;
+				Nbrick+=1;
+			}
+			bricky+=BRICK_HEIGHT+BRICK_SEP;
+			row+=1;
+		}
+	}
 }
