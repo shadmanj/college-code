@@ -22,8 +22,6 @@ public class Hailstone extends ConsoleProgram {
 			}
 			else{
 				temp = input*3+1;
-				println(input+" is odd, so I do 3n+1: "+temp);
-				input = temp;
 			}
 		}
 	}

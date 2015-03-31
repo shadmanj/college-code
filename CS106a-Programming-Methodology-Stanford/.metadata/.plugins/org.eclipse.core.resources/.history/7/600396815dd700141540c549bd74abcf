@@ -20,11 +20,6 @@ public class Hailstone extends ConsoleProgram {
 				println(input+" is even, so I take half: "+temp);
 				input = temp;
 			}
-			else{
-				temp = input*3+1;
-				println(input+" is odd, so I do 3n+1: "+temp);
-				input = temp;
-			}
 		}
 	}
 }
