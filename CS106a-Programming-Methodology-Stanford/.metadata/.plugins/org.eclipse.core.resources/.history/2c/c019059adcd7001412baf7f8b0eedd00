@@ -1,0 +1,8 @@
+/**/
+public class MyCounter {
+	
+	public MyCounter(int StartValue){
+		
+	}
+
+}

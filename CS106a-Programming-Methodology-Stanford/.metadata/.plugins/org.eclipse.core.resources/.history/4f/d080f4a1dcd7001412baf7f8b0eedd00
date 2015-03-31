@@ -1,0 +1,11 @@
+/**/
+public class MyCounter {
+	
+	public MyCounter(int StartValue){
+		
+	}
+	
+	//Instance variable
+	private int counter;
+
+}
