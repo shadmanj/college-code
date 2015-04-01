@@ -108,15 +108,8 @@ public class Breakout extends GraphicsProgram {
 /** BALL ANIMATION **/
 	/*Check for contact with paddle*/
 	private void checkPaddleContact(){
-		double ballx = ball.getX()+BALL_RADIUS;
-		double bally = ball.getY()+BALL_RADIUS*2;
-		double paddlex = paddle.getX();
-		double paddley = paddle.getY();
-		if (ballx >= paddlex-5 && ballx <= paddlex+PADDLE_WIDTH+5){
-			if (bally >= paddley){
-				Y_VEL = -Y_VEL;
-			}
-		}
+		int ballx,bally,paddlex,paddley;
+		
 	}
 	
 	/*Check for ball collision with boundaries*/
@@ -125,6 +118,7 @@ public class Breakout extends GraphicsProgram {
 		int i = 0;
 		/*Condition if ball goes beyond the y position of the paddle*/
 		if (ball.getY() > HEIGHT-BALL_RADIUS* 2){
+			Y_VEL = -Y_VEL;
 			i = 1;
 		}
 		//Check ball stays inside top of screen

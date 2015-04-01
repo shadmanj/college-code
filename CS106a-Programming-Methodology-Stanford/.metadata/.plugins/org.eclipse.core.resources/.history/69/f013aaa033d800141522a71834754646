@@ -112,10 +112,8 @@ public class Breakout extends GraphicsProgram {
 		double bally = ball.getY()+BALL_RADIUS*2;
 		double paddlex = paddle.getX();
 		double paddley = paddle.getY();
-		if (ballx >= paddlex-5 && ballx <= paddlex+PADDLE_WIDTH+5){
-			if (bally >= paddley){
-				Y_VEL = -Y_VEL;
-			}
+		if (ballx >= paddlex && ballx <= paddlex+PADDLE_WIDTH){
+			
 		}
 	}
 	
@@ -125,6 +123,7 @@ public class Breakout extends GraphicsProgram {
 		int i = 0;
 		/*Condition if ball goes beyond the y position of the paddle*/
 		if (ball.getY() > HEIGHT-BALL_RADIUS* 2){
+			Y_VEL = -Y_VEL;
 			i = 1;
 		}
 		//Check ball stays inside top of screen

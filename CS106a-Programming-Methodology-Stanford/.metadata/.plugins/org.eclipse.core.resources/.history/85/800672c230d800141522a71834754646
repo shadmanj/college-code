@@ -59,8 +59,8 @@ public class Breakout extends GraphicsProgram {
 	private static final int NTURNS = 3;
 	
 /** Starting X and Y velocities **/
-	private double X_VEL;
-	private double Y_VEL;
+	private double X_VEL = 1;
+	private double Y_VEL = 1;
 	
 /** Animation delay between ball moves **/
 	private static final int DELAY = 5;
@@ -77,20 +77,11 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		/*Draw GUI*/
 		setup();
-		int life = 0;
 		addMouseListeners();
-		while(life < 5){
-			int markDeath;
+		while(true){
 			moveBall();
-			checkPaddleContact();
-			markDeath = checkBoundaries();
+			checkBoundaries();
 			pause(DELAY);
-			if (markDeath == 1){
-				remove(paddle);
-				remove(ball);
-				setup();
-				life++;
-			}			
 		}
 	}
 	
@@ -106,32 +97,16 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 /** BALL ANIMATION **/
-	/*Check for contact with paddle*/
-	private void checkPaddleContact(){
-		double ballx = ball.getX()+BALL_RADIUS;
-		double bally = ball.getY()+BALL_RADIUS*2;
-		double paddlex = paddle.getX();
-		double paddley = paddle.getY();
-		if (ballx >= paddlex-5 && ballx <= paddlex+PADDLE_WIDTH+5){
-			if (bally >= paddley){
-				Y_VEL = -Y_VEL;
-			}
-		}
-	}
-	
-	/*Check for ball collision with boundaries*/
+	/*Check for ball collision*/
 	private int checkBoundaries(){
-		/*Set marker to signal ball leaving bottom boundary*/
-		int i = 0;
 		/*Condition if ball goes beyond the y position of the paddle*/
-		if (ball.getY() > HEIGHT-BALL_RADIUS* 2){
-			i = 1;
+		if (ball.getY() > (HEIGHT-PADDLE_Y_OFFSET)-BALL_RADIUS* 2){
+			Y_VEL = -Y_VEL;
 		}
 		//Check ball stays inside top of screen
 		else if (ball.getY() < 0){Y_VEL = -Y_VEL;}
 		//Check ball doesn't fly out the sides
 		else if (ball.getX() < 0 || ball.getX()>WIDTH){X_VEL = -X_VEL;}
-		return i;
 	}
 	
 	/*Update and move ball*/
@@ -152,8 +127,6 @@ public class Breakout extends GraphicsProgram {
 		ball = new GOval(getWidth()/2-BALL_RADIUS,getHeight()/2-BALL_RADIUS,BALL_RADIUS,BALL_RADIUS);
 		ball.setFilled(true);
 		ball.setFillColor(Color .black);
-		X_VEL = 2;
-		Y_VEL = 1;
 		add(ball);
 	}
 	
