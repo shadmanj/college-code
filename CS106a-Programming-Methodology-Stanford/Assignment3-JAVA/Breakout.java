@@ -59,11 +59,11 @@ public class Breakout extends GraphicsProgram {
 	private static final int NTURNS = 3;
 	
 /** Starting X and Y velocities **/
-	private double X_VEL = 0;
-	private double Y_VEL = 0;
+	private double X_VEL = 1;
+	private double Y_VEL = 1;
 	
 /** Animation delay between ball moves **/
-	private static final int DELAY = 50;
+	private static final int DELAY = 5;
 	
 /**	Private GInstance variable **/
 	private GOval ball;
@@ -73,21 +73,22 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		/*Draw GUI*/
 		setup();
-		/*Drop ball*/
-		while (1>0){
+		while(true){
 			moveBall();
-			//checkGround();
+			checkBoundaries();
+			pause(DELAY);
 		}
-		
 	}
 	
 /** BALL ANIMATION **/
 	/*Check for ball collision*/
-	private void checkGround(){
+	private void checkBoundaries(){
 		/*Condition if ball goes beyond the y position of the paddle*/
 		if (ball.getY() > (HEIGHT-PADDLE_Y_OFFSET)-BALL_RADIUS* 2){
 			Y_VEL = -Y_VEL;
 		}
+		else if (ball.getY() < 0){Y_VEL = -Y_VEL;}
+		else if (ball.getX() < 0 || ball.getX()>WIDTH){X_VEL = -X_VEL;}
 	}
 	
 	/*Update and move ball*/
