@@ -67,16 +67,31 @@ public class Breakout extends GraphicsProgram {
 	
 /**	Private GInstance variable **/
 	private GOval ball;
+	private GRect paddle;
 
+/** Starting dx for mouse position **/
+	private double lastX;
+	
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
 		/*Draw GUI*/
 		setup();
+		addMouseListeners();
 		while(true){
 			moveBall();
 			checkBoundaries();
 			pause(DELAY);
+		}
+	}
+/** PADDLE ANIMATION WITH MOUSE **/
+	//Define Mouse Movement of paddle
+	public void mouseMoved(MouseEvent e){
+		if (paddle != null){
+			if (paddle.getX()+PADDLE_WIDTH < WIDTH || e.getX()-lastX < 0){
+				paddle.move((e.getX()-lastX),0);
+				lastX = e.getX();
+			}
 		}
 	}
 	
@@ -87,7 +102,9 @@ public class Breakout extends GraphicsProgram {
 		if (ball.getY() > (HEIGHT-PADDLE_Y_OFFSET)-BALL_RADIUS* 2){
 			Y_VEL = -Y_VEL;
 		}
+		//Check ball stays inside top of screen
 		else if (ball.getY() < 0){Y_VEL = -Y_VEL;}
+		//Check ball doesn't fly out the sides
 		else if (ball.getX() < 0 || ball.getX()>WIDTH){X_VEL = -X_VEL;}
 	}
 	
@@ -117,7 +134,7 @@ public class Breakout extends GraphicsProgram {
 		/*Set starting position of paddle*/
 		int paddlex = getWidth()/2-PADDLE_WIDTH/2;
 		int paddley = HEIGHT-PADDLE_Y_OFFSET;
-		GRect paddle = new GRect(paddlex,paddley,PADDLE_WIDTH,PADDLE_HEIGHT);
+		paddle = new GRect(0,paddley,PADDLE_WIDTH,PADDLE_HEIGHT);
 		paddle.setFilled(true);
 		paddle.setFillColor(Color .black);
 		add(paddle);
