@@ -1,10 +1,12 @@
 /*
  * File: Breakout.java
  * -------------------
- * Name:
- * Section Leader:
+ * Name: Shadman Jubaer
  * 
- * This file will eventually implement the game of Breakout.
+ * 
+ * This file implements the game of Breakout. The user has three lives to 
+ * clear the screen of blocks by bouncing a ball off of a paddle at the 
+ * bottom of the screen. 
  */
 
 import acm.graphics.*;
@@ -65,45 +67,68 @@ public class Breakout extends GraphicsProgram {
 /** Animation delay between ball moves **/
 	private static final int DELAY = 5;
 	
-/**	Private GInstance variable **/
+/**	Objects used in the program **/
 	private GOval ball;
 	private GRect paddle;
 	private GRect brick;
 
-/** Starting dx for mouse position **/
+/** Previous mouse position **/
 	private double lastX;
 	
 /** NUMBER OF LIVES IN GAME **/
-	private int LIVES_LEFT = 5;
+	private int LIVES_LEFT = 3;
 
 /** BLOCKS **/
 	private int BLOCKS = NBRICKS_PER_ROW*NBRICK_ROWS;
-	
-/* Method: run() */
+
+/*----------------------------------------------------------*/	
+
 /** Runs the Breakout program. */
 	public void run() {
 		/*Draw GUI*/
 		setup();
+		
+		/*The win condition is when zero blocks remain*/
 		int win = 0;
-		/*Start game*/
+
+		/**START GAME **/
+		
+		/*Set random starting x velocity. This determines direction of travel */
 		X_VEL = -2 + (int)(Math.random() * ((2 - (-2)) + 1));
+		
 		/*Start controlling paddle*/
 		addMouseListeners();
+		
+		/*Continue game until lives run out*/
 		while(LIVES_LEFT > 0){
-			/*Change X_VEL to something random*/
+			/*Initialize markers to mark deaths and whether blocks have been hit*/
 			int markDeath;
 			int blockHit;
+			/*Move ball by the specified X_VEL and Y_VEL*/
 			moveBall();
+			/*Check for collision with blocks, boundaries, and the paddle*/
 			checkBlockHit();
 			checkPaddleContact();
 			markDeath = checkBoundaries();
 			checkDeath(markDeath);
+			/*Check if win conditions have been met*/
 			if (win == 1){
 				break;
 			}
-			/*markDeath == 1 when ball crosses
-			 * bottom boundary*/
 			pause(DELAY);
+		}
+		/*Display end of game message*/
+		remove(paddle);
+		remove(ball);
+		if (win == 1){
+			GLabel winLabel = new GLabel("YOU WON!",0,HEIGHT-50);
+			winLabel.setVisible(true);
+			add(winLabel);
+		}
+		else{
+			GLabel loss = new GLabel("YOU LOST",0,HEIGHT-50);
+			loss.setVisible(true);
+			add(loss);
 		}
 	}
 	
@@ -122,7 +147,7 @@ public class Breakout extends GraphicsProgram {
 			remove(ball);
 			drawBall();
 			X_VEL = -2 + (int)(Math.random() * ((2 - (-2)) + 1));
-			LIVES_LEFT++;
+			LIVES_LEFT--;
 		}
 	}
 	
