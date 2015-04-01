@@ -60,7 +60,7 @@ public class Breakout extends GraphicsProgram {
 	
 /** Starting X and Y velocities **/
 	private double X_VEL;
-	private double Y_VEL;
+	private double Y_VEL=2;
 	
 /** Animation delay between ball moves **/
 	private static final int DELAY = 5;
@@ -68,38 +68,88 @@ public class Breakout extends GraphicsProgram {
 /**	Private GInstance variable **/
 	private GOval ball;
 	private GRect paddle;
+	private GRect brick;
 
 /** Starting dx for mouse position **/
 	private double lastX;
+	
+/** NUMBER OF LIVES IN GAME **/
+	private int LIVES_LEFT = 5;
+
+/** BLOCKS **/
+	private int BLOCKS = NBRICKS_PER_ROW*NBRICK_ROWS;
 	
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
 		/*Draw GUI*/
 		setup();
-		int life = 0;
+		int win = 0;
+		/*Start game*/
+		X_VEL = -2 + (int)(Math.random() * ((2 - (-2)) + 1));
+		/*Start controlling paddle*/
 		addMouseListeners();
-		while(life < 5){
+		while(LIVES_LEFT > 0){
+			/*Change X_VEL to something random*/
 			int markDeath;
+			int blockHit;
 			moveBall();
+			checkBlockHit();
 			checkPaddleContact();
 			markDeath = checkBoundaries();
+			checkDeath(markDeath);
+			if (win == 1){
+				break;
+			}
+			/*markDeath == 1 when ball crosses
+			 * bottom boundary*/
 			pause(DELAY);
-			if (markDeath == 1){
-				remove(paddle);
-				remove(ball);
-				setup();
-				life++;
-			}			
+		}
+	}
+	
+/** DEFINES WIN CONDITIONS **/
+	private int checkWin(){
+		if (BLOCKS==0){
+			return 1;
+		}
+		else return 0;
+	}
+
+/** DEFINE BALL INTERACTIONS WITH BLOCKS AND BOUNDARIES **/
+	/*Checks if death has occured, and resets game*/
+	private void checkDeath(int Death){
+		if (Death == 1){
+			remove(ball);
+			drawBall();
+			X_VEL = -2 + (int)(Math.random() * ((2 - (-2)) + 1));
+			LIVES_LEFT++;
+		}
+	}
+	
+	/*Check whether a block has been hit*/
+	private GObject getCollision(){
+		if((getElementAt(ball.getX(),ball.getY())) != null){
+			BLOCKS--;
+			return getElementAt(ball.getX(),ball.getY());
+		}
+		else{return null;}
+	}
+	
+	private void checkBlockHit(){
+		GObject collider = getCollision();
+		if (collider != null && collider !=paddle){
+			remove(collider);
+			Y_VEL = -Y_VEL;
 		}
 	}
 	
 /** PADDLE ANIMATION WITH MOUSE **/
 	//Define Mouse Movement of paddle
 	public void mouseMoved(MouseEvent e){
+		int paddley = HEIGHT-PADDLE_Y_OFFSET;;
 		if (paddle != null){
 			if (paddle.getX()+PADDLE_WIDTH < WIDTH || e.getX()-lastX < 0){
-				paddle.move((e.getX()-lastX),0);
+				paddle.setLocation((e.getX()-PADDLE_WIDTH/2),paddley);
 				lastX = e.getX();
 			}
 		}
@@ -139,7 +189,7 @@ public class Breakout extends GraphicsProgram {
 		ball.move(X_VEL, Y_VEL);
 	}
 
-/** SETUP GUI**/
+/** SETUP GUI **/
 	
 	/*Setup Method*/
 	private void setup(){
@@ -182,7 +232,7 @@ public class Breakout extends GraphicsProgram {
 			int brickx = 4;
 			while (Nbrick < NBRICKS_PER_ROW){
 				/*Draw a brick of given dimensions and position*/
-				GRect brick = new GRect(brickx,bricky,BRICK_WIDTH,BRICK_HEIGHT);
+				brick = new GRect(brickx,bricky,BRICK_WIDTH,BRICK_HEIGHT);
 				/*SET BRICK COLOR*/
 				brick.setFilled(true);
 				if (row < 2){brick.setFillColor(Color .red);}
