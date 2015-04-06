@@ -81,9 +81,9 @@ public class Breakout extends GraphicsProgram {
 /** BLOCKS **/
 	private int BLOCKS = NBRICKS_PER_ROW*NBRICK_ROWS;
 
-/*--------------------------------------------------------------------------*/	
+/*----------------------------------------------------------*/	
 
-/** RUNS THE BREAKOUT PROGRAM. */
+/** Runs the Breakout program. */
 	public void run() {
 		/*Draw GUI*/
 		setup();
@@ -107,16 +107,9 @@ public class Breakout extends GraphicsProgram {
 			/*Move ball by the specified X_VEL and Y_VEL*/
 			moveBall();
 			/*Check for collision with blocks, boundaries, and the paddle*/
-			//If block is hit, bounce off and remove block
 			checkBlockHit();
-			//Bounce off paddle if paddle is hit
 			checkPaddleContact();
-			//Detect if ball hit any outer boundaries
-			//If ball hit bottom boundary, set markDeath to 1
-			//Otherwise bounce ball off walls.
 			markDeath = checkBoundaries();
-			//If markDeath equals 1, reset ball and paddle, also 
-			//subtract 1 from remaining lives
 			checkDeath(markDeath);
 			/*Check if win conditions have been met*/
 			if (win == 1){
@@ -127,36 +120,29 @@ public class Breakout extends GraphicsProgram {
 		/*Display end of game message*/
 		remove(paddle);
 		remove(ball);
-		/*If game is won, display win message*/
 		if (win == 1){
 			GLabel winLabel = new GLabel("YOU WON!",0,HEIGHT-50);
 			winLabel.setVisible(true);
 			add(winLabel);
 		}
-		/*Otherwise display lose message*/
 		else{
 			GLabel loss = new GLabel("YOU LOST",0,HEIGHT-50);
 			loss.setVisible(true);
 			add(loss);
 		}
 	}
-
-/*-------------------------------------------------------------------*/
 	
 /** DEFINES WIN CONDITIONS **/
 	private int checkWin(){
-		//If the number of remaining blocks is 0, return winning flag
 		if (BLOCKS==0){
 			return 1;
 		}
-		//Otherwise, ignore
-		else {return 0;}
+		else return 0;
 	}
 
 /** DEFINE BALL INTERACTIONS WITH BLOCKS AND BOUNDARIES **/
 	/*Checks if death has occured, and resets game*/
 	private void checkDeath(int Death){
-		//If death flag is 1, reset ball and subtract 1 life
 		if (Death == 1){
 			remove(ball);
 			drawBall();
@@ -167,8 +153,6 @@ public class Breakout extends GraphicsProgram {
 	
 	/*Check whether a block has been hit*/
 	private GObject getCollision(){
-		//Return the element at the ball's position
-		//If the element isn't null, subtract a ball
 		if((getElementAt(ball.getX(),ball.getY())) != null){
 			BLOCKS--;
 			return getElementAt(ball.getX(),ball.getY());
@@ -177,10 +161,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void checkBlockHit(){
-		//Set collider equal to the element returned by getCollision()
 		GObject collider = getCollision();
-		//If the element isn't null or the paddle, assume a block has been hit
-		//Bounce the ball and remove the element 
 		if (collider != null && collider !=paddle){
 			remove(collider);
 			Y_VEL = -Y_VEL;
@@ -190,17 +171,10 @@ public class Breakout extends GraphicsProgram {
 /** PADDLE ANIMATION WITH MOUSE **/
 	//Define Mouse Movement of paddle
 	public void mouseMoved(MouseEvent e){
-		//Hardcode the y position of the paddle, since it stays fixed in the 
-		//y axis
 		int paddley = HEIGHT-PADDLE_Y_OFFSET;;
-		//As long as the paddle exists, update its position based on the 
-		//position of the mouse
 		if (paddle != null){
-			//As long as the paddle si within the bounds, set the paddle's location 
-			//As the position of the mouse
 			if (paddle.getX()+PADDLE_WIDTH < WIDTH || e.getX()-lastX < 0){
 				paddle.setLocation((e.getX()-PADDLE_WIDTH/2),paddley);
-				//Update mouse location 
 				lastX = e.getX();
 			}
 		}
@@ -209,14 +183,10 @@ public class Breakout extends GraphicsProgram {
 /** BALL ANIMATION **/
 	/*Check for contact with paddle*/
 	private void checkPaddleContact(){
-		//Determine the x and y coordinates of the ball
 		double ballx = ball.getX()+BALL_RADIUS;
 		double bally = ball.getY()+BALL_RADIUS*2;
-		//Determine the x and y coordinates of the paddle
 		double paddlex = paddle.getX();
 		double paddley = paddle.getY();
-		//If the ball approaches the same spot as the paddle, bounce the 
-		//Ball
 		if (ballx >= paddlex-5 && ballx <= paddlex+PADDLE_WIDTH+5){
 			if (bally >= paddley){
 				Y_VEL = -Y_VEL;
@@ -241,7 +211,6 @@ public class Breakout extends GraphicsProgram {
 	
 	/*Update and move ball*/
 	private void moveBall(){
-		//Move ball using x and y velocities that are determined at setup
 		ball.move(X_VEL, Y_VEL);
 	}
 
