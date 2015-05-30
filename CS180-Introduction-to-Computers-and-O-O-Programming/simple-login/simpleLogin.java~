@@ -1,0 +1,21 @@
+/**
+ * Shadman Jubaer
+ * This program aske the user to login with a password,
+ * then saves a log of the date and time of login.
+ **/
+
+//Import statements
+import javax.swing.*;
+import java.util.*;
+
+//Class
+class simpleLogin {
+  
+  public static void main(String[] args){
+    /*Obtain username*/
+    String username, password;
+    username = JOptionPane.showInputDialog(null, "Username: ");
+    password = JOptionPane.showInputDialog(null, "Password: ");
+    System.out.println(username + ' ' + password);
+  }
+}
