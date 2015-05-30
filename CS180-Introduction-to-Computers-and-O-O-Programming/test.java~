@@ -1,8 +1,0 @@
-class test {
-  public static void main(String[] args){
-    String s;
-    s = "You're my best friend!";
-    String result = s.substring(6);
-    System.out.prinln(result);
-  }
-}
