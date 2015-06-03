@@ -7,7 +7,7 @@ from Biomedical Engineering at Purdue as of 03/28/2015.
 
 I've done projects using: 
 
-C, Python, MATLAB, and Java..
+C, Python, MATLAB, and Java.
 
 This repository is organized in the following manner:
 
