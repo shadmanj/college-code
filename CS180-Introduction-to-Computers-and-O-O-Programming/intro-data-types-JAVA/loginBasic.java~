@@ -1,0 +1,16 @@
+/**
+ * Shadman Jubaer
+ * This program takes login information from the user using a dialog box.
+ **/
+
+import javax.swing.*;
+import java.ustil.*;
+
+class loginBasic {
+  public static void main(String[] args){
+    Date today = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd, yyyy");
+    sdf.SimpleDateFormat(today);
+    System.out.println(today);
+  }
+}

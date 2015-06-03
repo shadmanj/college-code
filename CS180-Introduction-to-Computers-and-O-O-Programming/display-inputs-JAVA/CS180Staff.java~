@@ -1,0 +1,57 @@
+/**
+ * Shadman Jubaer
+ * This class defines methods that take instructor info as input 
+ * and displays it in a neat table.
+ **/
+
+// Imports
+import javax.swing.*;
+
+// Class start
+class CS180Staff {
+  //Initialize variables
+  private String firstName, lastName, email, office;
+  //Take inputs
+  void getDetails(){
+    firstName = JOptionPane.showInputDialog(null,"Enter first name: ");
+    lastName = JOptionPane.showInputDialog(null, "Enter last name: ");
+    email = JOptionPane.showInputDialog(null, "Enter email: ");
+    office = JOptionPane.showInputDialog(null, "Enter email: ");
+  }
+  //Print outputs
+  void printNeatly(){
+    System.out.println("    "+firstName+' '+lastName);
+    System.out.println("    Email: "+email);
+    System.out.println("    Office: "+office);
+  }
+}
+
+//Controller class
+public class CourseStaff{
+  
+  public static void main(String[] args){
+    
+    //Initialize variables
+    CS180Staff instructor, coordinator, ta;
+    
+    //Take instructor info
+    instructor = new CS180Staff();
+    instructor.getDetails();
+    
+    //Take coordinator info
+    coordinator = new CS180Staff();
+    coordinator.getDetails();
+    
+    //Take TA info
+    ta = new CS180Staff();
+    ta.getDetails();
+    
+    //Print outputs
+    System.out.println("Instructor:");
+    instructor.printNeatly();
+    System.out.println("Coordinator:");
+    coordinator.printNeatly();
+    System.out.println("Teaching Assistant:");
+    ta.printNeatly();
+  }
+}
