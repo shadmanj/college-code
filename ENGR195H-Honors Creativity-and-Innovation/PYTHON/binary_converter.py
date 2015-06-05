@@ -63,7 +63,7 @@ def Base2_to_Base10(Number):
     return Sum
 
 # Main program
-Type  = int(input('Input conversion type(0: base 10 to binary; 1: binary to base 10; 2: Quit: '))
+Type  = int(input('Input conversion type:\n0: base 10 to binary\n1: binary to base 10\n2: Quit\n\n '))
 
 # Conditional statements to determine which function to use or
 # which message to output.
