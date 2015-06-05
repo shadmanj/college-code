@@ -1,6 +1,0 @@
-/* Uses MyCounter class to keep track of a counter */
-public class UseCounter {
-	public void run(){
-		
-	}
-}
