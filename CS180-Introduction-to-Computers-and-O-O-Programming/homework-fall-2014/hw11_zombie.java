@@ -40,7 +40,7 @@ public class hw11_zombie{
 		list.add(this);
 		this.name = name;
 		this.serial = count;
-		count++;
+		count--;
 	}	
 
 	static void printStatus(){
